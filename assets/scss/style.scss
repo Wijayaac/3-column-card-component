@@ -8,7 +8,7 @@
   background-color: $very-light-gray;
   min-height: 200vh;
   @include breakpoint-up(medium) {
-    min-height: 95vh;
+    min-height: 98vh;
   }
 }
 
@@ -21,9 +21,11 @@
   transform: translate(-50%, -50%);
   color: $transparent-white;
   width: 90%;
+  max-width: 100%;
   @include breakpoint-up(medium) {
     flex-direction: row;
-    width: 80%;
+    width: 60%;
+    max-width: 80%;
   }
 
   &__item-1,
