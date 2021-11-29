@@ -1,3 +1,98 @@
-body {
-  color: #eee;
+@import "resets";
+@import "variables";
+@import "mixins";
+
+.section {
+  position: relative;
+  width: 100%;
+  background-color: $very-light-gray;
+  min-height: 200vh;
+  @include breakpoint-up(medium) {
+    min-height: 95vh;
+  }
+}
+
+.car-type {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $transparent-white;
+  width: 90%;
+  @include breakpoint-up(medium) {
+    flex-direction: row;
+    width: 80%;
+  }
+
+  &__item-1,
+  &__item-2,
+  &__item-3 {
+    padding: 3.125rem;
+  }
+  &__item-1 {
+    background-color: $bright-orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    @include breakpoint-up(medium) {
+      border-top-right-radius: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    button {
+      color: $bright-orange;
+    }
+  }
+  &__item-2 {
+    background-color: $dark-cyan;
+    button {
+      color: $dark-cyan;
+    }
+  }
+  &__item-3 {
+    background-color: $very-dark-cyan;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    @include breakpoint-up(medium) {
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    button {
+      color: $very-dark-cyan;
+    }
+  }
+  &__title {
+    margin: 1rem 0;
+    font-family: $font-heading;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  &__description,
+  &__action {
+    margin: 1rem 0;
+    font-family: $font-paragraph;
+    font-size: $regular-font;
+  }
+  &__action {
+    cursor: pointer;
+    margin-top: 2rem;
+    background-color: $very-light-gray;
+    border: 2px solid $very-light-gray;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color ease 0.3s;
+
+    @include breakpoint-up(medium) {
+      margin-top: 5rem;
+    }
+    &:hover {
+      background-color: transparent;
+      color: $very-light-gray;
+    }
+  }
 }
